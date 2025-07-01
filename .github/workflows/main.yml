@@ -21,5 +21,5 @@ jobs:
 
       - name: Build and Run App with Docker Compose
         run: |
-          cd /home/ubuntu/demo1
+          cd /home/ubuntu/jyo
           docker compose up -d --build
