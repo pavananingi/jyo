@@ -1,0 +1,42 @@
+
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: jyo-app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.jyo.rule=Host(`profile.pavan.today`)"
+      - "traefik.http.routers.jyo.entrypoints=websecure"
+      - "traefik.http.routers.jyo.tls.certresolver=myresolver"
+      - "traefik.http.services.jyo.loadbalancer.server.port=3000"
+    networks:
+      - web
+    restart: always
+
+  traefik:
+    image: traefik:v2.11
+    container_name: traefik
+    command:
+      - "--api.dashboard=true"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=pavan.aningi1998@email.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Optional: Traefik dashboard
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
