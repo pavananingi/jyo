@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jyothis Website</title>
+  <title>Suma's World</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -15,8 +15,8 @@
     }
 
     header {
-      background: linear-gradient(to right, #ff416c, #ff4b2b);
-      padding: 60px 20px;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      padding: 70px 20px;
       text-align: center;
       animation: fadeInDown 2s ease-in-out;
     }
@@ -25,18 +25,19 @@
       font-size: 3em;
       color: #fff;
       letter-spacing: 2px;
-      animation: slideIn 2s infinite alternate;
+      animation: pulse 2s infinite alternate;
     }
 
-    @keyframes slideIn {
-      from { transform: translateY(0); }
-      to { transform: translateY(-10px); }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #e0e0e0;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background: #222;
+      background: #1f1f1f;
       padding: 15px;
     }
 
@@ -44,11 +45,12 @@
       color: #fff;
       text-decoration: none;
       margin: 0 20px;
+      font-weight: bold;
       transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ff4b2b;
+      color: #ff6ec4;
     }
 
     section {
@@ -56,7 +58,7 @@
     }
 
     .services {
-      background: #1e1e1e;
+      background: #1a1a1a;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -64,15 +66,15 @@
     }
 
     .services div {
-      background: #2c2c2c;
+      background: #282828;
       padding: 30px;
       border-radius: 15px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background 0.4s;
     }
 
     .services div:hover {
-      transform: translateY(-10px);
-      background: #ff4b2b;
+      transform: scale(1.05);
+      background: #ff6ec4;
     }
 
     .gallery {
@@ -89,36 +91,36 @@
 
     .gallery img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 10px #ff4b2b;
+      box-shadow: 0 0 10px #ff6ec4;
     }
 
     form {
       background: #1e1e1e;
       max-width: 500px;
       margin: auto;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 25px;
+      border-radius: 12px;
     }
 
     form input, form textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
     }
 
     form button {
-      padding: 10px 20px;
-      background: #ff4b2b;
+      padding: 12px 20px;
+      background: #ff6ec4;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
     }
 
     form button:hover {
-      background: #ff416c;
+      background: #ff2d95;
     }
 
     footer {
@@ -132,13 +134,18 @@
       from { opacity: 0; transform: translateY(-50px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to Jyothis</h1>
-    <p>Shining Bright Like a Star</p>
+    <h1>Welcome to Suma's World</h1>
+    <p>Creativity, Elegance, and Passion</p>
   </header>
 
   <nav>
@@ -150,24 +157,24 @@
   <section id="services">
     <h2 style="text-align:center; margin-bottom: 30px;">Our Services</h2>
     <div class="services">
-      <div><h3>Fashion Design</h3><p>Modern & Traditional Styles</p></div>
-      <div><h3>Custom Tailoring</h3><p>Perfect Fit for Everyone</p></div>
-      <div><h3>Bridal Wear</h3><p>Elegant Wedding Collections</p></div>
+      <div><h3>Creative Styling</h3><p>Personalized looks curated by Suma</p></div>
+      <div><h3>Fashion Consulting</h3><p>Guiding you to style perfection</p></div>
+      <div><h3>Bridal Makeovers</h3><p>Memorable looks for your big day</p></div>
     </div>
   </section>
 
   <section id="gallery">
     <h2 style="text-align:center; margin-bottom: 30px;">Gallery</h2>
     <div class="gallery">
-      <img src="https://source.unsplash.com/300x200/?fashion,dress" alt="Dress 1"/>
-      <img src="https://source.unsplash.com/300x200/?fashion,indian" alt="Dress 2"/>
-      <img src="https://source.unsplash.com/300x200/?bridal,women" alt="Dress 3"/>
-      <img src="https://source.unsplash.com/300x200/?saree" alt="Dress 4"/>
+      <img src="https://source.unsplash.com/300x200/?fashion,girl" alt="Look 1"/>
+      <img src="https://source.unsplash.com/300x200/?woman,style" alt="Look 2"/>
+      <img src="https://source.unsplash.com/300x200/?bridal,indian" alt="Look 3"/>
+      <img src="https://source.unsplash.com/300x200/?makeup,elegant" alt="Look 4"/>
     </div>
   </section>
 
   <section id="contact">
-    <h2 style="text-align:center; margin-bottom: 30px;">Contact Us</h2>
+    <h2 style="text-align:center; margin-bottom: 30px;">Contact Suma</h2>
     <form onsubmit="return handleSubmit(event)">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
@@ -177,13 +184,13 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Jyothis. All rights reserved.</p>
+    <p>&copy; 2025 Suma's World. Designed with ❤️</p>
   </footer>
 
   <script>
     function handleSubmit(e) {
       e.preventDefault();
-      alert("Thanks for reaching out to Jyothis! We'll get back to you soon.");
+      alert("Thank you for contacting Suma! We'll reach out soon.");
       return false;
     }
   </script>
