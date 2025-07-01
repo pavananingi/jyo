@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Pavan Kalyan Aningi",
+  "author": "jyo",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.4",
