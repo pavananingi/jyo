@@ -3,159 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jyothi's Webpage</title>
+  <title>Jyothis Website</title>
   <style>
-    /* RESET & FONTS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      color: #333;
-      animation: bgPulse 10s infinite alternate;
-    }
-
-    @keyframes bgPulse {
-      0% {
-        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      }
-      100% {
-        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-      }
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: white;
+      line-height: 1.6;
     }
 
     header {
-      padding: 40px 20px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      padding: 60px 20px;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 2s ease-in-out;
     }
 
     header h1 {
       font-size: 3em;
       color: #fff;
-      text-shadow: 2px 2px 5px #000;
-      animation: fadeInDown 1s ease-in-out;
+      letter-spacing: 2px;
+      animation: slideIn 2s infinite alternate;
     }
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes slideIn {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff4b2b;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
+      padding: 60px 20px;
     }
 
-    .card {
-      background: #fff;
+    .services {
+      background: #1e1e1e;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .services div {
+      background: #2c2c2c;
+      padding: 30px;
       border-radius: 15px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
+    .services div:hover {
       transform: translateY(-10px);
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+      background: #ff4b2b;
     }
 
-    .button {
-      display: inline-block;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ff4b2b;
+    }
+
+    form {
+      background: #1e1e1e;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
       padding: 10px 20px;
-      margin-top: 10px;
-      background: #ee9ca7;
+      background: #ff4b2b;
       color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    .button:hover {
-      background: #ff6f91;
+    form button:hover {
+      background: #ff416c;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.1);
-      color: #444;
+      background: #111;
+      color: #aaa;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      .card {
-        margin: 10px;
-      }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to Jyothi's World</h1>
+    <h1>Welcome to Jyothis</h1>
+    <p>Shining Bright Like a Star</p>
   </header>
 
-  <section>
-    <div class="card">
-      <h2>About Jyothi</h2>
-      <p>
-        Jyothi is a creative soul who loves design, color, and expression. This page is a tribute to her passion, personality, and unique energy.
-      </p>
-      <a class="button" href="#" onclick="showMessage()">Know More</a>
-    </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="card">
-      <h2>Gallery</h2>
-      <p>Explore the colors of creativity and joy through this virtual gallery of imagination.</p>
-      <div id="gallery" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+  <section id="services">
+    <h2 style="text-align:center; margin-bottom: 30px;">Our Services</h2>
+    <div class="services">
+      <div><h3>Fashion Design</h3><p>Modern & Traditional Styles</p></div>
+      <div><h3>Custom Tailoring</h3><p>Perfect Fit for Everyone</p></div>
+      <div><h3>Bridal Wear</h3><p>Elegant Wedding Collections</p></div>
     </div>
   </section>
 
+  <section id="gallery">
+    <h2 style="text-align:center; margin-bottom: 30px;">Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/300x200/?fashion,dress" alt="Dress 1"/>
+      <img src="https://source.unsplash.com/300x200/?fashion,indian" alt="Dress 2"/>
+      <img src="https://source.unsplash.com/300x200/?bridal,women" alt="Dress 3"/>
+      <img src="https://source.unsplash.com/300x200/?saree" alt="Dress 4"/>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; margin-bottom: 30px;">Contact Us</h2>
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
   <footer>
-    &copy; 2025 Jyothi's Page | Made with 💖 by Pavan
+    <p>&copy; 2025 Jyothis. All rights reserved.</p>
   </footer>
 
   <script>
-    function showMessage() {
-      alert("Jyothi is awesome! 🌟✨");
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("Thanks for reaching out to Jyothis! We'll get back to you soon.");
+      return false;
     }
-
-    const galleryImages = [
-      'https://picsum.photos/seed/jyothi1/200/150',
-      'https://picsum.photos/seed/jyothi2/200/150',
-      'https://picsum.photos/seed/jyothi3/200/150',
-      'https://picsum.photos/seed/jyothi4/200/150',
-      'https://picsum.photos/seed/jyothi5/200/150'
-    ];
-
-    const gallery = document.getElementById('gallery');
-    galleryImages.forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Jyothi gallery image';
-      img.style.borderRadius = '10px';
-      img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
-      gallery.appendChild(img);
-    });
   </script>
+
 </body>
 </html>
