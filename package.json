@@ -1,0 +1,16 @@
+
+{
+  "name": "jyo-realtime-location-app",
+  "version": "1.0.0",
+  "description": "A real-time location tracking app using Express and Socket.IO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Pavan Kalyan Aningi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.4",
+    "socket.io": "^4.7.2"
+  }
+}
