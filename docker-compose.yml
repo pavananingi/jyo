@@ -4,7 +4,7 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: jyo-app
+    container_name: jyo-app1
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.jyo.rule=Host(`jyo.pavan.today`)"
